@@ -1,0 +1,144 @@
+/* POPULAR STOCKS */
+
+.sub-section {
+  padding: 3rem 8rem;
+}
+
+.stock-table-container {
+  width: 100%;
+  overflow: auto;
+  margin-top: 1rem;
+  box-shadow: var(--shadow);
+  border-radius: 15px;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+.table-header {
+  cursor: pointer;
+  align-items: center;
+}
+
+.table-header .bx {
+  color: var(--semi-transparent);
+  font-size: 1.7rem;
+  transition: all 0.2s ease;
+}
+
+.table-header:hover .bx {
+  color: var(--text-color);
+}
+
+.table-header.active .bx {
+  color: var(--text-color);
+}
+
+.stock-table-container::-webkit-scrollbar {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
+.stock-table-container::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-color: #0001;
+  visibility: hidden;
+}
+.stock-table-container:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 16px 24px;
+  font-size: 1.6rem;
+}
+
+thead tr {
+  background-color: var(--darker-bg);
+}
+
+.stock-row {
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.stock-row:hover {
+  background-color: var(--backgroud-hover);
+}
+
+.stock-row:last-child {
+  border-bottom: none;
+}
+
+.stock-name-cont:hover {
+  text-decoration: underline;
+}
+
+.stock-name {
+  font-size: 1.6rem;
+  margin-bottom: 2px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.stock-ticker {
+  font-size: 1rem;
+  color: var(--lighter-text);
+}
+
+.stock-logo {
+  width: 3.4rem;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+.view-all-wlist {
+  margin-top: 0.5rem;
+  text-align: right;
+}
+
+.view-all-wlist a {
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.watchlist .watchlist-link:hover {
+  text-decoration: underline;
+}
+
+/* NEWS */
+.news-cover-img {
+  width: 15rem;
+  height: 10rem;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+
+.news-container {
+  margin-top: 1.3rem;
+}
+
+.news-link {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.news {
+  margin-top: 1.3rem;
+  border-bottom: 1px solid var(--text-color);
+  padding-bottom: 1.2rem;
+}
+
+.src-and-date {
+  color: var(--lighter-text);
+  font-weight: 500;
+  font-size: 1.3rem;
+  gap: 10px;
+}

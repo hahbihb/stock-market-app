@@ -1,0 +1,201 @@
+.stock-view-main {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  padding: 1.5rem 3rem;
+  width: 100%;
+}
+.stock-info-container {
+  position: relative;
+}
+
+.stock-info-container img {
+  width: 7rem;
+  margin-right: 0;
+}
+
+.stock-info-container .stock-name {
+  font-size: 3rem;
+}
+
+.stock-info-container .stock-ticker {
+  font-size: 1.6rem;
+}
+
+.stock-logo {
+  border-radius: 50%;
+}
+
+.company-name {
+  padding: 1rem;
+}
+
+.categories {
+  padding: 1rem;
+}
+
+.categories div {
+  padding: 0.3rem 1rem;
+  background-color: var(--lighter-bg);
+  border-radius: 7px;
+  margin-right: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: 1px solid #444;
+}
+
+.watchlist-toggle {
+  margin-left: 15px;
+}
+.watchlist-toggle i {
+  font-size: 3rem;
+}
+
+.company-details {
+  flex-wrap: wrap;
+}
+.company-details-right {
+  gap: 2rem 5rem;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.company-details-right h5 {
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+.company-details p {
+  font-weight: 600;
+}
+
+.company-details a {
+  color: #006acc;
+}
+
+.company-details a:hover {
+  text-decoration: underline;
+}
+
+/* chart */
+.stock-chart-header {
+  justify-content: space-between;
+  padding-inline: 2rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.stock-chart {
+  min-height: 300px;
+}
+
+label {
+  font-size: 1.3rem;
+}
+
+option {
+  font-size: 1.3rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+select {
+  cursor: pointer;
+  background-color: inherit;
+  color: var(--text-color);
+}
+
+.chart-bottom {
+  justify-content: space-between;
+}
+.price-high-low {
+  font-weight: 600;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-right: 2rem;
+  font-size: 1.1rem;
+}
+/* RIGHT SIDE */
+.stock-right-container {
+  padding: 1rem;
+}
+
+.stock-right-container > div {
+  margin-bottom: 3rem;
+}
+
+.company-description {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.news-cont {
+  font-size: 1rem;
+  margin-bottom: 4.5rem;
+}
+.news-cover-img {
+  width: 10rem;
+  height: 6.4rem;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+.news-link {
+  color: var(--text-color);
+  text-decoration: none;
+}
+.news {
+  margin-top: 1.3rem;
+  border-bottom: 1px solid var(--text-color);
+  padding-bottom: 1.2rem;
+}
+
+.news-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.src-and-date {
+  color: var(--lighter-text);
+  font-weight: 500;
+  font-size: 1.1rem;
+  gap: 10px;
+}
+
+/* Related Stocks */
+
+.related-stocks {
+  margin-top: 1.5rem;
+}
+
+.related-stock-row {
+  padding: 1.3rem 1rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #444;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.related-stock-row:hover {
+  background-color: var(--backgroud-hover);
+}
+.related-stock-row .stock-name {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.related-stock-row .stock-ticker {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.related-stock-row .stock-logo {
+  width: 4rem;
+}
+
+.related-stock-row .stock-price {
+  margin-right: 1.1rem;
+}
+
+.stock-price-details {
+  font-weight: 600;
+}

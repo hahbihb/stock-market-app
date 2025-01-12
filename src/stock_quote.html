@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- load fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/company-view.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+
+    <!-- script -->
+    <script type="module" defer src="js/stockQuote.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.js"
+      type="module"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="index.html" class="logo cursor-pointer flex align-center"
+        ><h4 class="logo-name">Stuck Market</h4>
+        <i class="bx bx-candles"></i>
+      </a>
+      <div class="others">
+        <div class="search-container">
+          <div class="search flex align-center">
+            <div class="search-input">
+              <input
+                type="text"
+                placeholder="Search with company name or ticker"
+                id="search-input"
+              />
+            </div>
+            <button type="submit" class="search-btn cursor-pointer">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+          <div class="search-suggestions hidden"></div>
+        </div>
+        <div class="align-center">
+          <button class="menu-btn">
+            <i class="bx bx-menu"></i>
+            <i class="bx bx-x hidden"></i>
+          </button>
+          <div class="nav-links align-center">
+            <a href="watchlist.html" class="cursor-pointer watchlist-link"
+              >Watchlist</a
+            >
+            <a href="sign-up.html"
+              ><div class="btn sign-up-btn cursor-pointer">Sign Up</div></a
+            >
+          </div>
+        </div>
+        <div class="mode-btn cursor-pointer">
+          <i class="bx bx-sun light-md"></i>
+          <i class="bx bx-moon dark-md hidden"></i>
+        </div>
+      </div>
+    </header>
+    <div class="observer"></div>
+    <main class="stock-view-main">
+      <div class="toast quote-toast flex align-center"></div>
+      <div class="stock-info-container">
+        <div class="company-details flex">
+          <div class="normal-loading"></div>
+        </div>
+
+        <div class="stock-chart-container">
+          <div class="normal-loading"></div>
+        </div>
+      </div>
+      <div class="stock-right-container">
+        <div class="company-description-cont">
+          <h4 class="tertiary-header">About</h4>
+          <div class="company-description">
+            <div class="normal-loading"></div>
+          </div>
+        </div>
+        <div class="news-cont">
+          <h3 class="tertiary-header">News</h3>
+          <div class="news-container company-news-cont flex-column">
+            <div class="normal-loading"></div>
+          </div>
+        </div>
+        <div class="related-stocks-container">
+          <h4 class="tertiary-header">Similar Companies</h4>
+          <div class="related-stocks">
+            <div class="normal-loading"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <nav class="footer-logo">
+          <a href="/" class="logo cursor-pointer flex align-center"
+            ><h4 class="logo-name">Stuck Market</h4>
+            <i class="bx bx-candles"></i>
+          </a>
+        </nav>
+        <div class="description">
+          <p>
+            <b>Stuck Market</b> is a platform that provides almost real-time
+            stock market data, news, and information concerning US stocks to
+            help you make informed investment decisions.
+          </p>
+        </div>
+        <nav class="footer-contacts">
+          <ul>
+            <li><a href="https://www.x.com/harbyb9/">X: @harbyb9</a></li>
+            <li>
+              <a href="mailto:hsalami612@gmail.com"
+                >Email: hsalami612@gmail.com</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="copyright">
+        &copy; Copyright by
+        <a href="#" class="copyright-link">Habeeb Salami, 2025.</a>
+      </div>
+    </footer>
+  </body>
+</html>

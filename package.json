@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "p-limit": "^6.1.0"
+  },
+  "name": "stuck_market",
+  "version": "1.0.0",
+  "devDependencies": {
+    "parcel": "^2.13.3"
+  },
+  "scripts": {
+    "start": "parcel src/index.html src/stock_quote.html src/watchlist.html src/sign-up.html",
+    "build": "parcel build src/index.html src/stock_quote.html src/watchlist.html src/sign-up.html --dist-dir ./dist"
+  },
+  "author": "Habeeb Salami",
+  "license": "ISC",
+  "description": ""
+}
