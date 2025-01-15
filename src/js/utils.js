@@ -79,13 +79,11 @@ export function sortTable(view, array, sortProperty) {
 
 //Check if user logs in within an hour of previous log in
 export function isWithinAnHour(lastUpdated) {
-  if (!lastUpdated) return false; // No last updated time stored
-
-  const lastUpdatedTime = new Date(lastUpdated).getTime();
-  const currentTime = Date.now();
+  if (!lastUpdated) return false; // Return false if no last updated time is stored
+  const currentTime = new Date().getTime();
 
   // Check if less than 1 hour (60 * 60 * 1000 milliseconds) have passed
-  return currentTime - lastUpdatedTime < 20 * 60 * 60 * 1000;
+  return currentTime - lastUpdated < 1 * 60 * 60 * 1000;
 }
 
 //Check if user logs in on a weekend

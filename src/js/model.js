@@ -165,7 +165,7 @@ export async function renderPopularStocks() {
 
     //set popular data state
     state.popular = [...popularModified];
-    utils.persistLocalItem("lastUpdated", new Date().toISOString());
+    utils.persistLocalItem("lastUpdated", Date.now());
     utils.persistLocalItem("localStoragePopular", state.popular);
   } catch (err) {
     console.error(`${err} 💥💥💥💥`);

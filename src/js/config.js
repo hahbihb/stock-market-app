@@ -1,6 +1,6 @@
 import * as hidden from "../hidden.js";
 
-export const TIMEOUT_SEC = 18;
+export const TIMEOUT_SEC = 40;
 export const FINNHUB_URL = "https://finnhub.io/api/v1/";
 export const FINNHUB_API_KEY = "csubglhr01qgo8ni2dn0csubglhr01qgo8ni2dng";
 export const RAPID_PROFILE_URL =
