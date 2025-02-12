@@ -38,7 +38,7 @@ export async function getCompanyQuote(symbol) {
     const data = await model.getCompanyData(symbol);
     const response2 = await utils.fetchApiData(
       `${config.RAPID_PROFILE_URL}region=US&symbol=${symbol}`,
-      config.RAPID_PROFILE_KEY,
+      process.env.PARCEL_RAPID_PROFILE_KEY,
       config.RAPID_PROFILE_HOST
     );
 
