@@ -2,8 +2,6 @@ import * as model from "./model.js";
 import * as utils from "./utils.js";
 import * as config from "./config.js";
 
-console.log(process.env.PARCEL_RAPID_PROFILE_KEY);
-console.log("yess");
 export const sqstate = {
   price: {},
   quoteData: {},

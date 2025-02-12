@@ -52,6 +52,10 @@ table {
   visibility: visible;
 }
 
+th {
+  white-space: nowrap;
+}
+
 th,
 td {
   text-align: left;

@@ -72,6 +72,13 @@ const controlWatchlist = async function (btn, symbol) {
     watchlistView.renderToast("remove", "Removed from Watchlist");
   }
 
+  // Add watchlist header if watchlist is not empty
+  if (
+    model.state.watchlist.length > 0 &&
+    !watchlistView.isWatchlistHeaderRendered()
+  )
+    watchlistView.renderWatchlistHeader();
+
   //Check if item was loaded from Local Storage
   loadedFromLocalStorage
     ? model.renderPopularFromStorage()
@@ -80,6 +87,9 @@ const controlWatchlist = async function (btn, symbol) {
   //Update Views to show watchlisted status
   popularStockView.render(model.state.popular);
   watchlistView.render(model.state.watchlist.slice(0, 3));
+
+  //Remove watchlist header  if watchlist is empty
+  if (model.state.watchlist.length === 0) watchlistView.clearWatchlistHeader();
 
   //Add "see all" button if watchlist > 3
   if (model.state.watchlist.length > 3) watchlistView.renderSeeAllLink();
@@ -104,8 +114,12 @@ const controlInitialWatchlistView = async function () {
       );
 
       //Render Watchlist
-      watchlistView.render(model.state.watchlist);
+      watchlistView.render(model.state.watchlist.slice(0, 3));
     }
+    //Remove watchlist header  if watchlist is empty
+    if (model.state.watchlist.length === 0)
+      watchlistView.clearWatchlistHeader();
+
     //Add "see all" button if watchlist > 3
     if (model.state.watchlist.length > 3) watchlistView.renderSeeAllLink();
   } catch (err) {
