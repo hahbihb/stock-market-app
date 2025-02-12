@@ -31,7 +31,7 @@ class StockQuoteView extends View {
               <div>${this._data.sector}</div>
             </div>
           </div>
-          <div class="company-details-right flex">
+          <div class="company-details-right flex margin-bottom">
             <div class="share-price">
               <h5>Share Price</h5>
               <p>$${this._data.currentPrice}</p>
