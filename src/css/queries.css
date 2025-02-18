@@ -66,4 +66,9 @@
   .header {
     padding: 0 1rem;
   }
+  .loading-spinner {
+    width: 25px;
+    height: 25px;
+    display: block;
+  }
 }
