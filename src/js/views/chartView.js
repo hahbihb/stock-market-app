@@ -45,7 +45,7 @@ class ChartView extends View {
                 <div class="chart-period-selector">
                   <label for="dropdown"><h4>Period:</h4></label>
                   <select id="dropdown" name="dropdown">
-                    <option value="1D" selected>Today</option>
+                    <option value="1D" selected>1 Day</option>
                     <option value="5D">5 Days</option>
                     <option value="1M">1 Month</option>
                     <option value="6M">6 Months</option>
