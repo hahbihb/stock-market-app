@@ -16,7 +16,7 @@ const localStorageqD = JSON.parse(
 const localStorageNews = JSON.parse(
   localStorage.getItem("localStorageCompanyNews")
 );
-const localStorageChart = JSON.parse(localStorage.getItem("localStorageChart"));
+// const localStorageChart = JSON.parse(localStorage.getItem("localStorageChart"));
 
 //LIGHT AND DARK MODE
 const modeBtn = document.querySelector(".mode-btn");
@@ -102,16 +102,8 @@ const controlStockQuote = async function (symbol) {
 
 const controlChartData = async function (symbol) {
   try {
-    //Check if quote data is in local storage and get data accordingly
-    if (
-      localStorageChart &&
-      localStorageChart.some((stock) => stock.symbol === symbol)
-    ) {
-      sqmodel.getStockChartFromLocalStorage(symbol);
-    } else {
-      await sqmodel.getStockChart(symbol, "1D");
-    }
     //Get Chart Data for 1 day
+    await sqmodel.getStockChart(symbol, "1D");
     chartView.render(sqmodel.sqstate.price);
     const ctx = document.getElementById("myChart");
 

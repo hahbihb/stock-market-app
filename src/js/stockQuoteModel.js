@@ -141,7 +141,7 @@ export async function getStockChart(symbol, period) {
       symbol: symbol,
       data: sqstate.price,
     });
-    utils.persistLocalItem("localStorageChart", sqstate.stockChartArray);
+    // utils.persistLocalItem("localStorageChart", sqstate.stockChartArray);
 
     return adjustedPriceData;
   } catch (err) {
@@ -149,13 +149,13 @@ export async function getStockChart(symbol, period) {
   }
 }
 
-export function getStockChartFromLocalStorage(symbol) {
-  //get chart data from local storage
-  const chart = sqstate.stockChartArray.find((data) => data.symbol === symbol);
+// export function getStockChartFromLocalStorage(symbol) {
+//   //get chart data from local storage
+//   const chart = sqstate.stockChartArray.find((data) => data.symbol === symbol);
 
-  //set chart data state
-  sqstate.price = { ...chart.data };
-}
+//   //set chart data state
+//   sqstate.price = { ...chart.data };
+// }
 
 function initStockQuote() {
   const stockQuoteArray = JSON.parse(

@@ -83,13 +83,19 @@ export function isWithinAnHour(lastUpdated) {
   const currentTime = new Date().getTime();
 
   // Check if less than 1 hour (60 * 60 * 1000 milliseconds) have passed
-  return currentTime - lastUpdated < 2 * 60 * 60 * 1000;
+  return currentTime - lastUpdated < 1.5 * 60 * 60 * 1000;
 }
 
 //Check if user logs in on a weekend
 export function isWeekend() {
   const today = new Date();
   return today.getDay() === 6 || today.getDay() === 0;
+}
+
+//Check if user logs in at night
+export function isNight() {
+  const currentHour = new Date().getHours();
+  return currentHour < 6 || currentHour > 22;
 }
 
 //Fetch In batches

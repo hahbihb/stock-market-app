@@ -165,6 +165,7 @@ const controlInitialPopularView = async function () {
 
       //Remove QuoteData Array From Local Storage
       localStorage.removeItem("localStorageQuoteData");
+      localStorage.removeItem("localStorageCompanyNews");
     }
 
     //Render Popular Stocks
