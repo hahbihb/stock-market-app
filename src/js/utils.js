@@ -95,11 +95,26 @@ export function isWeekend() {
 //Fetch In batches
 export async function fetchInBatches(items, batchSize, func) {
   const results = [];
-  for (let i = 0; i < items.length; i += batchSize) {
-    const batch = items.slice(i, i + batchSize);
-    const data = await Promise.all(batch.map(func));
-    results.push(...data);
+  const executing = new Set(); // Tracks running promises
+
+  for (const item of items) {
+    // Start a new task
+    const promise = func(item).then((result) => {
+      results.push(result);
+      executing.delete(promise); // Remove from tracking once completed
+    });
+
+    executing.add(promise);
+
+    // If we hit the batchSize limit, wait for one to finish before adding more
+    if (executing.size >= batchSize) {
+      await Promise.race(executing);
+    }
   }
+
+  // Wait for remaining tasks to complete
+  await Promise.all(executing);
+
   return results;
 }
 
@@ -115,12 +130,13 @@ export const timeout = function (s) {
 //make button unclickable
 export const disableButton = function (btn) {
   btn.style.cursor = "not-allowed";
-  btn.disabled = "true";
+  btn.disabled = true;
 };
 
 export const enableButton = function (btn) {
   btn.style.cursor = "pointer";
-  btn.disabled = "false";
+  btn.disabled = false;
+  // btn.style.opacity = "1";
 };
 
 //Fetch Yahoo API Data

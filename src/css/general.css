@@ -110,11 +110,19 @@ body {
 .search-container {
   position: relative;
 }
+.sub-section > .search-container {
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+}
 .search {
   background-color: var(--darker-bg);
-  padding: 0.8rem 1.2rem;
+  padding: 0.8rem 2.1rem;
   border-radius: 30px;
   gap: 10px;
+  justify-content: space-between;
+  box-shadow: var(--shadow);
 }
 
 .search-input input {
@@ -124,6 +132,12 @@ body {
   width: 30rem;
   background-color: inherit;
   color: var(--text-color);
+}
+
+.sub-section .search-input input {
+  height: 40px;
+  font-size: 16px;
+  width: 42rem;
 }
 
 .search-btn {
@@ -149,6 +163,9 @@ body {
 }
 .search-suggestions p {
   font-weight: normal;
+}
+.sub-section .search-suggestions p {
+  font-size: 1.4rem;
 }
 
 .search-suggestions div:hover {
@@ -273,7 +290,7 @@ tbody tr {
 }
 
 .red {
-  color: #dc3545;
+  color: #d30c20;
 }
 .margin-bottom {
   margin-bottom: 1rem;

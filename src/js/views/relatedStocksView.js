@@ -27,9 +27,9 @@ class StockQuoteView extends View {
               </div>
               <div class="stock-price-details flex">
                 <div class="stock-price">$${stock.c}</div>
-                <div class=${stock.dp > 0 ? "green" : "red"}>${(
-          stock.dp * 100
-        ).toFixed(2)}%</div>
+                <div class=${stock.dp > 0 ? "green" : "red"}>${stock.dp.toFixed(
+          2
+        )}%</div>
               </div>
             </div>
         `

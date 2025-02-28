@@ -46,7 +46,7 @@ window.addEventListener("click", function (e) {
     searchSuggestions.classList.add("hidden");
   }
 });
-
+console.log("Somthing changed");
 //SEARCH SUGGESTIONS
 
 const controlSearchSuggestions = async function () {

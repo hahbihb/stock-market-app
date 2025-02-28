@@ -6,6 +6,9 @@ export const sqstate = {
   price: {},
   quoteData: {},
   quoteDataArray: [],
+  stockNewsArray: [],
+  stockNews: [],
+  stockChartArray: [],
   related: [],
   categories: [],
 };
@@ -83,10 +86,24 @@ export async function getCompanyNews(symbol) {
 
     const finalData = data.items.result.slice(0, config.COMPANY_NEWS_AMT);
 
+    //set news data state
+    sqstate.stockNews = [...finalData];
+
+    sqstate.stockNewsArray.push({ symbol: symbol, news: finalData });
+    utils.persistLocalItem("localStorageCompanyNews", sqstate.stockNewsArray);
+
     return finalData;
   } catch (err) {
     throw err;
   }
+}
+
+export function getCompanyNewsFromLocalStorage(symbol) {
+  //get news data from local storage
+  const news = sqstate.stockNewsArray.find((data) => data.symbol === symbol);
+
+  //set news data state
+  sqstate.stockNews = [...news.news];
 }
 
 export async function getStockChart(symbol, period) {
@@ -119,21 +136,42 @@ export async function getStockChart(symbol, period) {
     sqstate.price.high = finnhubData.h;
     sqstate.price.low = finnhubData.l;
 
+    //store chart data in local storage to manange API calls
+    sqstate.stockChartArray.push({
+      symbol: symbol,
+      data: sqstate.price,
+    });
+    utils.persistLocalItem("localStorageChart", sqstate.stockChartArray);
+
     return adjustedPriceData;
   } catch (err) {
     throw err;
   }
 }
 
+export function getStockChartFromLocalStorage(symbol) {
+  //get chart data from local storage
+  const chart = sqstate.stockChartArray.find((data) => data.symbol === symbol);
+
+  //set chart data state
+  sqstate.price = { ...chart.data };
+}
+
 function initStockQuote() {
   const stockQuoteArray = JSON.parse(
     localStorage.getItem("localStorageQuoteData")
   );
+  const stockNewsArray = JSON.parse(
+    localStorage.getItem("localStorageCompanyNews")
+  );
+  const stockChartArray = JSON.parse(localStorage.getItem("localStorageChart"));
   const categories = new Map(JSON.parse(localStorage.getItem("categories")));
 
   //set state
   if (categories) sqstate.categories = categories;
   if (stockQuoteArray) sqstate.quoteDataArray = [...stockQuoteArray];
+  if (stockNewsArray) sqstate.stockNewsArray = [...stockNewsArray];
+  if (stockChartArray) sqstate.stockChartArray = [...stockChartArray];
 }
 initStockQuote();
 

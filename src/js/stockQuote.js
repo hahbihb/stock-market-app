@@ -13,6 +13,10 @@ import * as config from "./config.js";
 const localStorageqD = JSON.parse(
   localStorage.getItem("localStorageQuoteData")
 );
+const localStorageNews = JSON.parse(
+  localStorage.getItem("localStorageCompanyNews")
+);
+const localStorageChart = JSON.parse(localStorage.getItem("localStorageChart"));
 
 //LIGHT AND DARK MODE
 const modeBtn = document.querySelector(".mode-btn");
@@ -98,8 +102,16 @@ const controlStockQuote = async function (symbol) {
 
 const controlChartData = async function (symbol) {
   try {
+    //Check if quote data is in local storage and get data accordingly
+    if (
+      localStorageChart &&
+      localStorageChart.some((stock) => stock.symbol === symbol)
+    ) {
+      sqmodel.getStockChartFromLocalStorage(symbol);
+    } else {
+      await sqmodel.getStockChart(symbol, "1D");
+    }
     //Get Chart Data for 1 day
-    await sqmodel.getStockChart(symbol, "1D");
     chartView.render(sqmodel.sqstate.price);
     const ctx = document.getElementById("myChart");
 
@@ -117,11 +129,9 @@ const controlChartData = async function (symbol) {
 };
 
 const controlChartChange = async function (period) {
-  let kperiod = period;
-
   try {
     //Get Chart Data for selected period
-    await sqmodel.getStockChart(quoteQuery, kperiod);
+    await sqmodel.getStockChart(quoteQuery, period);
     chartView.render(sqmodel.sqstate.price);
     chartView.adjustSelectedDropdown(period);
     const ctx = document.getElementById("myChart");
@@ -167,10 +177,18 @@ const controlWatchlist = async function (btn, symbol) {
 
 const controlCompanyNews = async function (symbol) {
   companyNewsView.renderSpinner();
-  const news = await sqmodel.getCompanyNews(symbol);
+
+  if (
+    localStorageNews &&
+    localStorageNews.some((stock) => stock.symbol === symbol)
+  ) {
+    sqmodel.getCompanyNewsFromLocalStorage(symbol);
+  } else {
+    await sqmodel.getCompanyNews(symbol);
+  }
 
   //Render Company News
-  companyNewsView.render(news);
+  companyNewsView.render(sqmodel.sqstate.stockNews);
 };
 
 const controlRelatedStocks = async function (stock) {

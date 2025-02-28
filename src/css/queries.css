@@ -15,6 +15,10 @@
   html {
     font-size: 50%;
   }
+  .sub-section > .search-container {
+    width: 100%;
+  }
+
   td:nth-child(4),
   th:nth-child(4) {
     display: none;
@@ -41,6 +45,9 @@
     100% {
       transform: scale(1);
     }
+  }
+  .sub-section .search-input input {
+    width: 33rem;
   }
   .nav-links {
     display: none;

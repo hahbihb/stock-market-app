@@ -131,7 +131,7 @@ const clearBookmarks = function () {
 
 export async function initStocks() {
   const companies = ["AAPL", "TSLA", "MSFT", "GOOGL", "NVDA", "META"];
-  const batchSize = 2;
+  const batchSize = 4;
 
   const popular = await utils.fetchInBatches(
     companies,

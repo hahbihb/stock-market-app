@@ -12,7 +12,7 @@ class SearchSuggestionsView extends View {
   _generatePreviewMarkup(suggestion) {
     return `<a href="stock_quote.html?symbol=${suggestion.symbol}">
               <div>
-                 <h4>${suggestion.description}</h4>
+                 <h2>${suggestion.description}</h2>
                  <p>${suggestion.symbol}</p>
               </div>
             </a>`;

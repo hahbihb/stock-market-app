@@ -1,8 +1,4 @@
 {
-  "dependencies": {
-    "dotenv": "^16.4.7",
-    "p-limit": "^6.1.0"
-  },
   "name": "stuck_market",
   "version": "1.1.0",
   "devDependencies": {
@@ -23,5 +19,8 @@
   },
   "author": "Habeeb Salami",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "p-limit": "^6.2.0"
+  }
 }
